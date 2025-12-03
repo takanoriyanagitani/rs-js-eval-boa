@@ -1,0 +1,42 @@
+[package]
+name = "rs-js-eval-boa"
+version = "0.1.0"
+edition = "2024"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+
+[[bin]]
+name = "js-eval-boa"
+
+[profile.release-wasi]
+inherits = "release"
+lto = true
+strip = true
+opt-level = 'z'
+codegen-units = 1
+panic = "abort"
+
+[dependencies.boa_engine]
+version = "0"
+default-features = false
+features = [
+	"float16",
+	"xsum",
+]
+
+[dependencies.serde_json]
+version = "1"
+default-features = false
+features = [
+	"std",
+]
+
+[dependencies.clap]
+version = "4"
+features = ["derive", "std"]
