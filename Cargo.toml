@@ -3,6 +3,14 @@ name = "rs-js-eval-boa"
 version = "0.1.0"
 edition = "2024"
 
+description = "Evaluates the js code using Boa/Wasi"
+license = "Apache-2.0"
+repository = "https://github.com/takanoriyanagitani/rs-js-eval-boa"
+homepage = "https://github.com/takanoriyanagitani/rs-js-eval-boa"
+documentation = "https://docs.rs/rs-js-eval-boa/latest"
+keywords = ["js", "boa", "wasm", "wasi", "eval"]
+categories = ["command-line-utilities"]
+
 [lints.rust]
 unsafe_code = "forbid"
 
